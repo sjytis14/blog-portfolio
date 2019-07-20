@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+
+<div class="card" >
+    <h5 class="card-header">{{ blog.title }}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{ blog.body }}</h5>
+      <p class="card-text">{{ blog.pub_date }}</p>
+      <a href="{% url 'home' %}" class="btn btn-secondary">back</a>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+    

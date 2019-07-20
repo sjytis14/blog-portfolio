@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="jumbotron">
+            <h1 class="display-4">My Portfolio</h1>
+            <hr class="my-4">
+            <p>나의 포트폴리오입니당</p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row">
+            <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="{% static 'cute.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                <h4>ㅠㅠㅜ</h4>
+                <p class="card-text">건후</p>
+              </div>
+            </div>
+          </div>
+        {% for portfolio in portfolios.all %}
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="{{ portfolio.image.url }}" alt="Card image cap">
+              <div class="card-body">
+                <h4>{{portfolio.title}}</h4>
+                <p class="card-text">{{portfolio.description}}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+
+{% endblock %}
